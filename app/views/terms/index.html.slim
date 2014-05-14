@@ -2,7 +2,7 @@ p#notice = notice
 
 h1 Listing terms
 
-- if @terms && @terms.last.ended_at
+- if @terms.count == 0 || @terms.last.ended_at
   input#start type="button" value="start"
 - else
   input#stop type="button" value="stop"
