@@ -1,0 +1,15 @@
+= form_for @term do |f|
+  - if @term.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@term.errors.count, "error")} prohibited this term from being saved:"
+      ul
+        - @term.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :started_at
+    = f.datetime_select :started_at
+  .field
+    = f.label :ended_at
+    = f.datetime_select :ended_at
+  .actions = f.submit 'Save'
