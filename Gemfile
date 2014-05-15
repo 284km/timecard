@@ -55,3 +55,9 @@ group :development do
   gem 'binding_of_caller'
 end
 
+gem 'figaro'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-github'
+
+
