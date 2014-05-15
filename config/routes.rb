@@ -2,6 +2,16 @@ Rails.application.routes.draw do
   resources :terms
   post '/terms/start' => 'terms#start'
   post '/terms/stop' => 'terms#stop'
+  get 'session/create'
+
+  get 'session/destroy'
+
+  root 'home#index'
+  get 'home/index'
+
+  get '/auth/:provider/callback', :to => 'session#create'
+  post '/auth/:provider/callback', :to => 'session#create'
+  get '/logout' => 'session#destroy', :as => :logout
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
