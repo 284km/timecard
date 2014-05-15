@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :terms
+  post '/terms/start' => 'terms#start'
+  post '/terms/stop' => 'terms#stop'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
